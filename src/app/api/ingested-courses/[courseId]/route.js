@@ -59,6 +59,7 @@ export async function GET(request, { params }) {
         }
 
         const courseData = courseSnap.data();
+        
         if (courseData.userId !== userId) {
             return NextResponse.json(
                 { error: "Forbidden: you do not own this course" },
